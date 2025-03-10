@@ -8,29 +8,12 @@ import { useState } from 'react';
 
 const App = () => {
   const [ipAddress, setIpAddress] = useState('');
-  const [isValid, setIsValid] = useState(true);
+
 
   const { data, loading, error } = useFetch(
     `https://freeipapi.com/api/json/${ipAddress}`
   );
   console.log(data);
-
-  function handleChange(event) {
-    setIpAddress(event.target.value());
-    setIsValid(true);
-  }
-
-  // form setter function
-  function handleSubmit(event) {
-    event.preventDefault();
-
-    // Regular expression to validate IP address
-    const ipRegex = /^([0-9]{1,3}\.){3}[0-9]{1,3}$/;
-
-    if (!ipRegex.test(ipAddress)) {
-      setIsValid(false);
-      return;
-    }
   }
   return (
     <main>
@@ -38,8 +21,8 @@ const App = () => {
         <h1>IP Address Tracker</h1>
         <SearchBar
           ipAddress={ipAddress}
-          handleChange={handleChange}
-          handleSubmit={handleSubmit}
+          data={data}
+          setIpAddress={setIpAddress}
         />
         {loading && <Loading />}
         {error ? <Error /> : <Details data={data} ipAddress={ipAddress} />}

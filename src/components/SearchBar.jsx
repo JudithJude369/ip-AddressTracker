@@ -1,6 +1,26 @@
 import arrow from '@/assets/images/icon-arrow.svg';
+import { useState } from 'react';
 
-const SearchBar = ({ ipAddress, handleChange, handleSubmit }) => {
+const SearchBar = ({ ipAddress, data, setIpAddress}) => {
+  const [isValid, setIsValid] = useState(true);
+
+    function handleChange(event) {
+      setIpAddress(event.target.value());
+      setIsValid(true);
+    }
+  
+    // form setter function
+    function handleSubmit(event) {
+      event.preventDefault();
+  
+      // Regular expression to validate IP address
+      const ipRegex = /^([0-9]{1,3}\.){3}[0-9]{1,3}$/;
+  
+      if (!ipRegex.test(ipAddress)) {
+        setIsValid(false);
+        return;
+      }
+
   return (
     <form className="form-wrapper" onSubmit={handleSubmit}>
       <input
