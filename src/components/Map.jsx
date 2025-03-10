@@ -9,13 +9,13 @@ const myIcon = L.icon({
   popupAnchor: [0, -0],
 });
 
-function LocationMap({ center }) {
-  const map = useMap();
-  map.flyTo(center);
-  return null;
-}
-
 const Map = ({ data }) => {
+
+  function LocationMap({ center }) {
+    const map = useMap();
+    map.flyTo(center);
+    return null;
+  }
   return (
     <MapContainer
       center={[data.latitude, data.longitude]}

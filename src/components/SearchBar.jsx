@@ -1,7 +1,7 @@
 import arrow from '@/assets/images/icon-arrow.svg';
 import { useState } from 'react';
 
-const SearchBar = ({ ipAddress, data, setIpAddress}) => {
+const SearchBar = ({ ipAddress, setIpAddress}) => {
   const [isValid, setIsValid] = useState(true);
 
     function handleChange(event) {
@@ -20,6 +20,7 @@ const SearchBar = ({ ipAddress, data, setIpAddress}) => {
         setIsValid(false);
         return;
       }
+    }
 
   return (
     <form className="form-wrapper" onSubmit={handleSubmit}>

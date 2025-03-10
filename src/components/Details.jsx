@@ -1,8 +1,8 @@
-const Details = ({ data, ipAddress }) => {
+const Details = ({ data }) => {
   return (
     <div className="details-container">
       <p className="details-wrapper">
-        IP ADDRESS<span>{ipAddress}</span>
+        IP ADDRESS<span>{data.ipAddress}</span>
       </p>
       <p className="details-wrapper">
         LOCATION<span>{data.cityName}</span>
