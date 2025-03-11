@@ -138,6 +138,7 @@ h1 {
   font-weight: var(--FWH);
   display: block;
 }
+
 /* Content styles */
 .container {
   padding: 2em 0;
@@ -177,7 +178,7 @@ input::placeholder {
 
 .btn {
   position: absolute;
-  top: 30%;
+  top: 29%;
   right: 12%;
   background-color: var(--Very-Dark-Gray);
   padding: 0.7em 1em;
@@ -213,11 +214,21 @@ input::placeholder {
   margin-bottom: 0.5em;
 }
 
+.error-message {
+  position: absolute;
+  top: 70%;
+  color: red;
+  font-size: 0.9rem;
+  text-align: center;
+  left: 0;
+  right: 0;
+}
+
 /* Tablet Styles */
 
 @media (min-width: 768px) {
   .btn {
-    right: 15%;
+    right: 14%;
   }
 }
 
@@ -232,7 +243,7 @@ input::placeholder {
   }
 
   .btn {
-    top: 28%;
+    top: 26%;
     right: 30%;
   }
 

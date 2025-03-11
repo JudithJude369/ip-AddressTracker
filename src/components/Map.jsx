@@ -9,7 +9,8 @@ const myIcon = L.icon({
   popupAnchor: [0, -0],
 });
 
-const Map = ({ data }) => {
+const Map = () => {
+  const position = [51.505, -0.09];
 
   function LocationMap({ center }) {
     const map = useMap();
@@ -18,7 +19,7 @@ const Map = ({ data }) => {
   }
   return (
     <MapContainer
-      center={[data.latitude, data.longitude]}
+      center={position}
       zoom={13}
       scrollWheelZoom={false}
       className="leaflet-container"
@@ -27,12 +28,12 @@ const Map = ({ data }) => {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <Marker position={[data.latitude, data.longitude]} icon={myIcon}>
+      <Marker position={position} icon={myIcon}>
         <Popup>
           A pretty CSS3 popup. <br /> Easily customizable.
         </Popup>
       </Marker>
-      <LocationMap center={[data.latitude, data.longitude]} />
+      <LocationMap center={position} />
     </MapContainer>
   );
 };

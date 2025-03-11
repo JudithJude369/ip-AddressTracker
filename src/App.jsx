@@ -7,24 +7,21 @@ import { useFetch } from '@/hooks/useFetch';
 import { useState } from 'react';
 
 const App = () => {
-  const [ipAddress, setIpAddress] = useState('')
-
+  const [ipAddress, setIpAddress] = useState('');
   const { data, loading, error } = useFetch(
-    `https://freeipapi.com/api/json/${ipAddress}`);
-  console.log(data);
+    `https://freeipapi.com/api/json/${ipAddress}`
+  );
+  // console.log(data);
 
   return (
     <main>
       <header className=" container header-wrapper">
         <h1>IP Address Tracker</h1>
-        <SearchBar
-          ipAddress={ipAddress}
-          setIpAddress={setIpAddress}
-        />
+        <SearchBar ipAddress={ipAddress} setIpAddress={setIpAddress} />
         {loading && <Loading />}
         {error ? <Error /> : <Details data={data} />}
       </header>
-      <Map data={data} />
+      <Map />
     </main>
   );
 };
