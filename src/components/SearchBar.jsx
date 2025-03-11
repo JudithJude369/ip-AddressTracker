@@ -1,5 +1,5 @@
 import arrow from '@/assets/images/icon-arrow.svg';
-import { useState } from 'react';
+// import { useState } from 'react';
 
 const SearchBar = ({ ipAddress, setIpAddress }) => {
   // const [isValid, setIsValid] = useState(true);
