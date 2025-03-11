@@ -214,7 +214,7 @@ input::placeholder {
   margin-bottom: 0.5em;
 }
 
-.error-message {
+/* .error-message {
   position: absolute;
   top: 70%;
   color: red;
@@ -222,7 +222,7 @@ input::placeholder {
   text-align: center;
   left: 0;
   right: 0;
-}
+} */
 
 /* Tablet Styles */
 
