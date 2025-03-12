@@ -1,4 +1,6 @@
 const Details = ({ data }) => {
+  if (!data) return null;
+
   return (
     <div className="details-container">
       <p className="details-wrapper">

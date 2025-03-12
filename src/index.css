@@ -61,6 +61,9 @@ body {
   font-size: var(--FSB);
   color: var(--Very-Dark-Gray);
   background-image: url(assets/images/pattern-bg-mobile.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 /* Set shorter line heights on headings and interactive elements */
