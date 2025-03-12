@@ -10,13 +10,14 @@ const myIcon = L.icon({
 });
 
 const Map = () => {
-  const position = [51.505, -0.09];
+  const position = [4.77742, 7.0134];
 
   function LocationMap({ center }) {
     const map = useMap();
     map.flyTo(center);
     return null;
   }
+
   return (
     <MapContainer
       center={position}
@@ -28,6 +29,7 @@ const Map = () => {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
+
       <Marker position={position} icon={myIcon}>
         <Popup>
           A pretty CSS3 popup. <br /> Easily customizable.
